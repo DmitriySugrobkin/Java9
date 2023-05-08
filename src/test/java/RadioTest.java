@@ -6,15 +6,16 @@ public class RadioTest {
 
     @Test
     public void shouldSetCurrentStationBetweenMinMax() {
-       Radio radio = new Radio();
+        Radio radio = new Radio();
 
-       radio.setCurrentStation(6);
+        radio.setCurrentStation(6);
 
-       int expected = 6;
-       int actual = radio.getCurrentStation();
+        int expected = 6;
+        int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentStationBetweenMin() {
         Radio radio = new Radio();
@@ -87,6 +88,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentStationWithButtonNextToMax() {
         Radio radio = new Radio();
@@ -99,6 +101,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentStationWithButtonNextWhenMax() {
         Radio radio = new Radio();
@@ -124,6 +127,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentStationWithButtonPrevToMin() {
         Radio radio = new Radio();
@@ -136,6 +140,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentStationWithButtonPrevWhenMin() {
         Radio radio = new Radio();
@@ -161,6 +166,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentVolumeMoreThanMaxWithButtonVolumeUp() {
         Radio radio = new Radio();
@@ -173,6 +179,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentVolumeBetweenMinMaxWithButtonVolumeDown() {
         Radio radio = new Radio();
@@ -185,6 +192,7 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldSetCurrentVolumeLessThanMinWithButtonVolumeDown() {
         Radio radio = new Radio();
