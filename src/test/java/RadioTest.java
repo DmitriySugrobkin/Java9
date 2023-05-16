@@ -205,6 +205,43 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
 
     }
+    @Test
+    public void shouldSetCurrentStationAndVolumeWithButtonNextAndVolumeUpWhenMax() {
+        Radio radio = new Radio(20,100);
+
+        radio.setCurrentStation(19);
+        radio.next();
+        radio.setCurrentVolume(100);
+        radio.volumeUp();
+
+        int expectedStation = 0;
+        int expectedVolume = 100;
+        int actualStation = radio.getCurrentStation();
+        int actualVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(expectedStation, actualStation);
+        Assertions.assertEquals(expectedVolume, actualVolume);
+
+
+    }
+
+    @Test
+    public void shouldSetCurrentStationAndVolumeWithButtonNextAndVolumeDownWhenMin() {
+        Radio radio = new Radio(20, 100);
+
+        radio.setCurrentStation(0);
+        radio.prev();
+        radio.setCurrentVolume(0);
+        radio.volumeDown();
+
+        int expectedStation = 19;
+        int expectedVolume = 0;
+        int actualStation = radio.getCurrentStation();
+        int actualVolume = radio.getCurrentVolume();
+        Assertions.assertEquals(expectedStation, actualStation);
+        Assertions.assertEquals(expectedVolume, actualVolume);
+
+
+    }
 
 
 }

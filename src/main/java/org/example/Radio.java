@@ -3,9 +3,21 @@ package org.example;
 public class Radio {
     private int currentStation;
     private int currentVolume;
+    private int maxStation;
+    private int maxVolume;
+
+    public Radio() {
+        this.maxStation = 9;
+        this.maxVolume = 100;
+    }
+
+    public Radio(int stationsCount, int volumeCount) {
+        this.maxStation = stationsCount - 1;
+        this.maxVolume = volumeCount;
+    }
 
     public void next() {
-        if (currentStation != 9) {
+        if (currentStation != maxStation) {
             currentStation++;
             return;
         }
@@ -16,7 +28,7 @@ public class Radio {
         if (currentStation != 0) {
             currentStation--;
         } else {
-            currentStation = 9;
+            currentStation = maxStation;
         }
     }
 
@@ -44,7 +56,7 @@ public class Radio {
         if (currentStation < 0) {
             return;
         }
-        if (currentStation > 9) {
+        if (currentStation > maxStation) {
             return;
         }
         this.currentStation = currentStation;
