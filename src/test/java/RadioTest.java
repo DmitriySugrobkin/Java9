@@ -206,5 +206,33 @@ public class RadioTest {
 
     }
 
+    @Test
+    public void shouldSetCurrentStationWithButtonNextWhenMax1() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(19);
+        radio.next();
+
+        int expected = 0;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    public void shouldSetCurrentStationWithButtonNextWhenMin1() {
+        Radio radio = new Radio(20);
+
+        radio.setCurrentStation(0);
+        radio.prev();
+
+        int expected = 19;
+        int actual = radio.getCurrentStation();
+        Assertions.assertEquals(expected, actual);
+
+
+    }
+
 
 }
